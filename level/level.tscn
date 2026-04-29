@@ -1,9 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://ctgumjaytuoch"]
+[gd_scene format=3 uid="uid://ctgumjaytuoch"]
 
 [ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://level/tileset.tres" id="1"]
-[ext_resource type="PackedScene" uid="uid://6mtip3ruyn" path="res://enemy/enemy.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://cky6e5nl0nyod" path="res://level/platforms/platform.tscn" id="3"]
-[ext_resource type="PackedScene" uid="uid://c3dh7xb6ef76q" path="res://level/coin.tscn" id="4"]
 [ext_resource type="Texture2D" uid="uid://bxsmiv7k3fngt" path="res://level/platforms/moving_platform.webp" id="6"]
 [ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="7"]
 [ext_resource type="Texture2D" uid="uid://bj6am5nfc0k73" path="res://level/props/grass_1.webp" id="10"]
@@ -39,7 +37,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_knmjc"]
 _data = {
-"move": SubResource("1")
+&"move": SubResource("1")
 }
 
 [sub_resource type="Animation" id="2"]
@@ -60,1416 +58,1319 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_frb4n"]
 _data = {
-"move": SubResource("2")
+&"move": SubResource("2")
 }
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" unique_id=60348990]
 process_mode = 1
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." unique_id=393155441]
 z_index = 1
 tile_set = ExtResource("1")
 rendering_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(65524, 7, 65536, 65525, 0, 0, 65526, 0, 0, 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 2, 0, 14, 2, 65536, 15, 0, 65536, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 7, 0, 131060, 7, 65536, 131061, 6, 0, 131062, 6, 0, 131063, 6, 0, 131064, 6, 0, 131065, 6, 0, 131066, 6, 0, 131067, 6, 0, 131068, 7, 0, 65538, 4, 65536, 65539, 3, 0, 65540, 3, 0, 65541, 3, 65536, 65542, 4, 0, 65550, 7, 65536, 65551, 6, 65536, 65552, 6, 0, 65553, 6, 0, 65554, 6, 0, 65555, 6, 0, 65556, 6, 0, 65557, 6, 0, 65558, 7, 0, 196596, 7, 65536, 196597, 6, 0, 196598, 6, 0, 196599, 6, 0, 196600, 6, 0, 196601, 6, 0, 196602, 6, 0, 196603, 6, 0, 196604, 7, 0, 196607, 4, 65536, 131072, 4, 0, 131086, 7, 65536, 131087, 6, 65536, 131088, 6, 0, 131089, 6, 0, 131090, 6, 0, 131091, 6, 0, 131092, 6, 0, 131093, 6, 0, 131094, 7, 0, 262132, 7, 65536, 262133, 6, 0, 262134, 6, 0, 262135, 6, 0, 262136, 6, 0, 262137, 6, 0, 262138, 6, 0, 262139, 6, 0, 262140, 7, 0, 196614, 4, 65536, 196615, 3, 65536, 196616, 4, 0, 196622, 7, 65536, 196623, 6, 65536, 196624, 6, 0, 196625, 6, 0, 196626, 6, 0, 196627, 6, 0, 196628, 6, 0, 196629, 6, 0, 196630, 7, 0, 327668, 7, 65536, 327669, 6, 0, 327670, 6, 0, 327671, 6, 0, 327672, 6, 0, 327673, 6, 0, 327674, 6, 0, 327675, 6, 0, 327676, 8, 0, 327677, 2, 0, 262158, 7, 65536, 262159, 6, 65536, 262160, 6, 0, 262161, 6, 0, 262162, 6, 0, 262163, 6, 0, 262164, 6, 0, 262165, 6, 0, 262166, 7, 0, 393204, 7, 65536, 393205, 6, 0, 393206, 6, 0, 393207, 6, 0, 393208, 6, 0, 393209, 6, 0, 393210, 6, 0, 393211, 6, 0, 393212, 6, 0, 393213, 7, 0, 327681, 4, 65536, 327682, 3, 0, 327683, 4, 0, 327694, 7, 65536, 327695, 6, 65536, 327696, 6, 0, 327697, 6, 0, 327698, 6, 0, 327699, 6, 0, 327700, 6, 0, 327701, 6, 0, 327702, 7, 0, 458740, 7, 65536, 458741, 6, 0, 458742, 6, 0, 458743, 6, 0, 458744, 6, 0, 458745, 6, 0, 458746, 6, 0, 458747, 6, 0, 458748, 18, 65536, 458749, 7, 0, 393222, 2, 65536, 393223, 11, 0, 393224, 13, 0, 393225, 11, 0, 393226, 2, 0, 393230, 7, 65536, 393231, 6, 65536, 393232, 6, 0, 393233, 6, 0, 393234, 6, 0, 393235, 6, 0, 393236, 6, 0, 393237, 6, 0, 393238, 7, 0, 524276, 7, 65536, 524277, 6, 0, 524278, 6, 0, 524279, 6, 0, 524280, 6, 0, 524281, 6, 0, 524282, 6, 0, 524283, 6, 0, 524284, 6, 0, 524285, 7, 0, 458753, 4, 65536, 458754, 3, 65536, 458755, 3, 65536, 458756, 4, 0, 458758, 16, 65536, 458759, 15, 65536, 458760, 14, 0, 458761, 14, 0, 458762, 16, 0, 458766, 7, 65536, 458767, 6, 65536, 458768, 6, 0, 458769, 6, 0, 458770, 6, 0, 458771, 6, 0, 458772, 6, 0, 458773, 6, 0, 458774, 7, 0, 589812, 7, 65536, 589813, 6, 0, 589814, 6, 0, 589815, 6, 0, 589816, 6, 0, 589817, 6, 0, 589818, 6, 0, 589819, 6, 0, 589820, 6, 0, 589821, 7, 0, 524302, 7, 65536, 524303, 6, 65536, 524304, 6, 0, 524305, 6, 0, 524306, 6, 0, 524307, 6, 0, 524308, 6, 0, 524309, 6, 0, 524310, 7, 0, 655348, 7, 65536, 655349, 6, 0, 655350, 6, 0, 655351, 6, 0, 655352, 6, 0, 655353, 6, 0, 655354, 6, 0, 655355, 6, 0, 655356, 18, 65536, 655357, 7, 0, 589837, 9, 65536, 589838, 8, 65536, 589839, 6, 65536, 589840, 6, 0, 589841, 6, 0, 589842, 6, 0, 589843, 6, 0, 589844, 6, 0, 589845, 6, 0, 589846, 7, 0, 720884, 7, 65536, 720885, 6, 0, 720886, 6, 0, 720887, 6, 0, 720888, 6, 0, 720889, 6, 0, 720890, 6, 0, 720891, 6, 0, 720892, 6, 0, 720893, 8, 0, 720894, 13, 0, 720895, 11, 0, 655360, 11, 0, 655361, 13, 0, 655362, 13, 0, 655363, 11, 0, 655364, 11, 0, 655365, 13, 0, 655366, 11, 0, 655367, 13, 0, 655368, 11, 0, 655369, 13, 0, 655370, 11, 0, 655371, 11, 0, 655372, 13, 0, 655373, 10, 65536, 655374, 6, 65536, 655375, 6, 65536, 655376, 6, 0, 655377, 6, 0, 655378, 6, 0, 655379, 6, 0, 655380, 6, 0, 655381, 6, 0, 655382, 7, 0, 786420, 7, 65536, 786421, 6, 0, 786422, 6, 0, 786423, 6, 0, 786424, 6, 0, 786425, 6, 0, 786426, 6, 0, 786427, 6, 0, 786428, 6, 0, 786429, 6, 0, 786430, 6, 0, 786431, 6, 0, 720896, 18, 0, 720897, 6, 0, 720898, 18, 0, 720899, 6, 0, 720900, 18, 0, 720901, 6, 0, 720902, 6, 0, 720903, 6, 0, 720904, 18, 65536, 720905, 18, 0, 720906, 6, 0, 720907, 6, 0, 720908, 18, 65536, 720909, 6, 0, 720910, 6, 65536, 720911, 6, 65536, 720912, 6, 0, 720913, 6, 0, 720914, 6, 0, 720915, 6, 0, 720916, 6, 0, 720917, 6, 0, 720918, 7, 0, 851956, 7, 65536, 851957, 6, 0, 851958, 6, 0, 851959, 6, 0, 851960, 6, 0, 851961, 6, 0, 851962, 6, 0, 851963, 6, 0, 851964, 14, 65536, 851965, 14, 65536, 851966, 14, 0, 851967, 14, 0, 786432, 14, 0, 786433, 14, 0, 786434, 14, 0, 786435, 14, 0, 786436, 14, 0, 786437, 18, 0, 786438, 14, 0, 786439, 14, 0, 786440, 14, 0, 786441, 14, 0, 786442, 14, 0, 786443, 14, 0, 786444, 14, 0, 786445, 14, 0, 786446, 6, 65536, 786447, 6, 65536, 786448, 6, 0, 786449, 6, 0, 786450, 6, 0, 786451, 6, 0, 786452, 6, 0, 786453, 6, 0, 786454, 7, 0, -655372, 2, 65536, -720874, 2, 0, -65514, 7, 0, -131050, 7, 0, -196586, 7, 0, -262122, 7, 0, -327658, 7, 0, -393194, 7, 0, -458730, 7, 0, -524266, 7, 0, -589802, 7, 0, -655338, 7, 0, -589836, 7, 65536, -524300, 7, 65536, -458764, 7, 65536, -393228, 7, 65536, -327692, 7, 65536, -262156, 7, 65536, -196620, 7, 65536, -131084, 7, 65536, -65548, 7, 65536, -12, 7, 65536)
 
-[node name="Grass" type="Node" parent="."]
+[node name="Grass" type="Node" parent="." unique_id=1743577567]
 
-[node name="g1" type="Sprite2D" parent="Grass"]
+[node name="g1" type="Sprite2D" parent="Grass" unique_id=1311782925]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(173, 636)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g58" type="Sprite2D" parent="Grass"]
+[node name="g58" type="Sprite2D" parent="Grass" unique_id=1309963676]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(375, 642)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g63" type="Sprite2D" parent="Grass"]
+[node name="g63" type="Sprite2D" parent="Grass" unique_id=1827639677]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(434, 641)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g65" type="Sprite2D" parent="Grass"]
+[node name="g65" type="Sprite2D" parent="Grass" unique_id=1588912195]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(480, 642)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g60" type="Sprite2D" parent="Grass"]
+[node name="g60" type="Sprite2D" parent="Grass" unique_id=316190806]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(413, 640)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g23" type="Sprite2D" parent="Grass"]
+[node name="g23" type="Sprite2D" parent="Grass" unique_id=73736680]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-44, 640)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g13" type="Sprite2D" parent="Grass"]
+[node name="g13" type="Sprite2D" parent="Grass" unique_id=2137000471]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(252, 641)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g41" type="Sprite2D" parent="Grass"]
+[node name="g41" type="Sprite2D" parent="Grass" unique_id=5444355]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(549, 641)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g48" type="Sprite2D" parent="Grass"]
+[node name="g48" type="Sprite2D" parent="Grass" unique_id=1882576194]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(740, 641)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g55" type="Sprite2D" parent="Grass"]
+[node name="g55" type="Sprite2D" parent="Grass" unique_id=1439209041]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(206, 67)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g44" type="Sprite2D" parent="Grass"]
+[node name="g44" type="Sprite2D" parent="Grass" unique_id=203708907]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(658, 639)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g12" type="Sprite2D" parent="Grass"]
+[node name="g12" type="Sprite2D" parent="Grass" unique_id=1179931564]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(324, 640)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g40" type="Sprite2D" parent="Grass"]
+[node name="g40" type="Sprite2D" parent="Grass" unique_id=408777341]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(598, 639)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g46" type="Sprite2D" parent="Grass"]
+[node name="g46" type="Sprite2D" parent="Grass" unique_id=1089493092]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(695, 641)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g43" type="Sprite2D" parent="Grass"]
+[node name="g43" type="Sprite2D" parent="Grass" unique_id=1613547289]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(705, 640)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g25" type="Sprite2D" parent="Grass"]
+[node name="g25" type="Sprite2D" parent="Grass" unique_id=1067787752]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(427, 382)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g30" type="Sprite2D" parent="Grass"]
+[node name="g30" type="Sprite2D" parent="Grass" unique_id=1344054322]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(612, 383)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g37" type="Sprite2D" parent="Grass"]
+[node name="g37" type="Sprite2D" parent="Grass" unique_id=552365618]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(109, 319)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g9" type="Sprite2D" parent="Grass"]
+[node name="g9" type="Sprite2D" parent="Grass" unique_id=1206080693]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-20, 640)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g18" type="Sprite2D" parent="Grass"]
+[node name="g18" type="Sprite2D" parent="Grass" unique_id=1386009378]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-86, 641)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g8" type="Sprite2D" parent="Grass"]
+[node name="g8" type="Sprite2D" parent="Grass" unique_id=807470489]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(116, 640)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g21" type="Sprite2D" parent="Grass"]
+[node name="g21" type="Sprite2D" parent="Grass" unique_id=745551928]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-34, 642)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g22" type="Sprite2D" parent="Grass"]
+[node name="g22" type="Sprite2D" parent="Grass" unique_id=1189063580]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-34, 642)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g6" type="Sprite2D" parent="Grass"]
+[node name="g6" type="Sprite2D" parent="Grass" unique_id=999047919]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(51, 637)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g16" type="Sprite2D" parent="Grass"]
+[node name="g16" type="Sprite2D" parent="Grass" unique_id=904238753]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-108, 640)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g2" type="Sprite2D" parent="Grass"]
+[node name="g2" type="Sprite2D" parent="Grass" unique_id=554907344]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(275, 637)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g39" type="Sprite2D" parent="Grass"]
+[node name="g39" type="Sprite2D" parent="Grass" unique_id=59282280]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(564, 637)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g51" type="Sprite2D" parent="Grass"]
+[node name="g51" type="Sprite2D" parent="Grass" unique_id=53888037]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-185, 255)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g47" type="Sprite2D" parent="Grass"]
+[node name="g47" type="Sprite2D" parent="Grass" unique_id=736536042]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(753, 639)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g42" type="Sprite2D" parent="Grass"]
+[node name="g42" type="Sprite2D" parent="Grass" unique_id=518092400]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(610, 641)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g45" type="Sprite2D" parent="Grass"]
+[node name="g45" type="Sprite2D" parent="Grass" unique_id=78657963]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(669, 640)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g14" type="Sprite2D" parent="Grass"]
+[node name="g14" type="Sprite2D" parent="Grass" unique_id=1985496496]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(164, 638)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g59" type="Sprite2D" parent="Grass"]
+[node name="g59" type="Sprite2D" parent="Grass" unique_id=1434528930]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(386, 639)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g64" type="Sprite2D" parent="Grass"]
+[node name="g64" type="Sprite2D" parent="Grass" unique_id=1621252921]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(445, 639)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g66" type="Sprite2D" parent="Grass"]
+[node name="g66" type="Sprite2D" parent="Grass" unique_id=2100401136]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(492, 640)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g26" type="Sprite2D" parent="Grass"]
+[node name="g26" type="Sprite2D" parent="Grass" unique_id=170078761]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(439, 381)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g75" type="Sprite2D" parent="Grass"]
+[node name="g75" type="Sprite2D" parent="Grass" unique_id=575200612]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(499, 74)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g73" type="Sprite2D" parent="Grass"]
+[node name="g73" type="Sprite2D" parent="Grass" unique_id=1969515246]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(563, 82)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g33" type="Sprite2D" parent="Grass"]
+[node name="g33" type="Sprite2D" parent="Grass" unique_id=2033230108]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(204, 319)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g36" type="Sprite2D" parent="Grass"]
+[node name="g36" type="Sprite2D" parent="Grass" unique_id=737809518]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(132, 318)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g38" type="Sprite2D" parent="Grass"]
+[node name="g38" type="Sprite2D" parent="Grass" unique_id=391368837]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(99, 318)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="f1" type="Sprite2D" parent="Grass"]
+[node name="f1" type="Sprite2D" parent="Grass" unique_id=1582469265]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(78, 312)
 texture = ExtResource("19")
 
-[node name="f12" type="Sprite2D" parent="Grass"]
+[node name="f12" type="Sprite2D" parent="Grass" unique_id=2001045388]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-47, 119)
 texture = ExtResource("19")
 
-[node name="f13" type="Sprite2D" parent="Grass"]
+[node name="f13" type="Sprite2D" parent="Grass" unique_id=105941807]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-447, -10)
 texture = ExtResource("19")
 
-[node name="f2" type="Sprite2D" parent="Grass"]
+[node name="f2" type="Sprite2D" parent="Grass" unique_id=361991636]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(417, 629)
 texture = ExtResource("19")
 
-[node name="f9" type="Sprite2D" parent="Grass"]
+[node name="f9" type="Sprite2D" parent="Grass" unique_id=1741471323]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(16, 629)
 texture = ExtResource("19")
 
-[node name="f5" type="Sprite2D" parent="Grass"]
+[node name="f5" type="Sprite2D" parent="Grass" unique_id=126288436]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(641, 629)
 texture = ExtResource("19")
 
-[node name="f7" type="Sprite2D" parent="Grass"]
+[node name="f7" type="Sprite2D" parent="Grass" unique_id=1101436760]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(433, 61)
 texture = ExtResource("19")
 
-[node name="f8" type="Sprite2D" parent="Grass"]
+[node name="f8" type="Sprite2D" parent="Grass" unique_id=1326104884]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(411, 374)
 texture = ExtResource("19")
 
-[node name="f10" type="Sprite2D" parent="Grass"]
+[node name="f10" type="Sprite2D" parent="Grass" unique_id=1897749584]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(295, 434)
 texture = ExtResource("19")
 
-[node name="f11" type="Sprite2D" parent="Grass"]
+[node name="f11" type="Sprite2D" parent="Grass" unique_id=823733272]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(495, 187)
 texture = ExtResource("19")
 
-[node name="f3" type="Sprite2D" parent="Grass"]
+[node name="f3" type="Sprite2D" parent="Grass" unique_id=392226696]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(524, 70)
 texture = ExtResource("19")
 
-[node name="f4" type="Sprite2D" parent="Grass"]
+[node name="f4" type="Sprite2D" parent="Grass" unique_id=1870142734]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(973, -10)
 texture = ExtResource("19")
 
-[node name="F5" type="Sprite2D" parent="Grass"]
+[node name="F5" type="Sprite2D" parent="Grass" unique_id=901444645]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(835, 628)
 texture = ExtResource("19")
 
-[node name="f6" type="Sprite2D" parent="Grass"]
+[node name="f6" type="Sprite2D" parent="Grass" unique_id=1645314213]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(637, 376)
 texture = ExtResource("19")
 
-[node name="g29" type="Sprite2D" parent="Grass"]
+[node name="g29" type="Sprite2D" parent="Grass" unique_id=1614333469]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(603, 381)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g74" type="Sprite2D" parent="Grass"]
+[node name="g74" type="Sprite2D" parent="Grass" unique_id=841269163]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(578, 88)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g27" type="Sprite2D" parent="Grass"]
+[node name="g27" type="Sprite2D" parent="Grass" unique_id=163242258]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(498, 381)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g34" type="Sprite2D" parent="Grass"]
+[node name="g34" type="Sprite2D" parent="Grass" unique_id=1101146926]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(228, 318)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g70" type="Sprite2D" parent="Grass"]
+[node name="g70" type="Sprite2D" parent="Grass" unique_id=747501592]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(467.8, 189.8)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g71" type="Sprite2D" parent="Grass"]
+[node name="g71" type="Sprite2D" parent="Grass" unique_id=316356644]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(563.8, 189.8)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g78" type="Sprite2D" parent="Grass"]
+[node name="g78" type="Sprite2D" parent="Grass" unique_id=1413988437]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(50.0001, 128)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g7" type="Sprite2D" parent="Grass"]
+[node name="g7" type="Sprite2D" parent="Grass" unique_id=1813928530]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(107, 637)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g69" type="Sprite2D" parent="Grass"]
+[node name="g69" type="Sprite2D" parent="Grass" unique_id=1704628495]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(272, 447)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g20" type="Sprite2D" parent="Grass"]
+[node name="g20" type="Sprite2D" parent="Grass" unique_id=784201506]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-58, 640)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g17" type="Sprite2D" parent="Grass"]
+[node name="g17" type="Sprite2D" parent="Grass" unique_id=11147587]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-96, 637)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g3" type="Sprite2D" parent="Grass"]
+[node name="g3" type="Sprite2D" parent="Grass" unique_id=1650361959]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(96, 638)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g53" type="Sprite2D" parent="Grass"]
+[node name="g53" type="Sprite2D" parent="Grass" unique_id=1991629086]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(216.8, 445.8)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13")
 
-[node name="g56" type="Sprite2D" parent="Grass"]
+[node name="g56" type="Sprite2D" parent="Grass" unique_id=361305423]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(150.8, 446.8)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12")
 
-[node name="g68" type="Sprite2D" parent="Grass"]
+[node name="g68" type="Sprite2D" parent="Grass" unique_id=1201901167]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(139.8, 447.8)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g67" type="Sprite2D" parent="Grass"]
+[node name="g67" type="Sprite2D" parent="Grass" unique_id=679044323]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(40, 638)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g49" type="Sprite2D" parent="Grass"]
+[node name="g49" type="Sprite2D" parent="Grass" unique_id=2048506688]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(645, 638)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g50" type="Sprite2D" parent="Grass"]
+[node name="g50" type="Sprite2D" parent="Grass" unique_id=229954926]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(764, 640)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g52" type="Sprite2D" parent="Grass"]
+[node name="g52" type="Sprite2D" parent="Grass" unique_id=1899151499]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(186, 66)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g72" type="Sprite2D" parent="Grass"]
+[node name="g72" type="Sprite2D" parent="Grass" unique_id=194612932]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(404, 190)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g77" type="Sprite2D" parent="Grass"]
+[node name="g77" type="Sprite2D" parent="Grass" unique_id=706714183]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-14, 124)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g57" type="Sprite2D" parent="Grass"]
+[node name="g57" type="Sprite2D" parent="Grass" unique_id=1792312809]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-163, 255)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g54" type="Sprite2D" parent="Grass"]
+[node name="g54" type="Sprite2D" parent="Grass" unique_id=2027685039]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(227, 64)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g4" type="Sprite2D" parent="Grass"]
+[node name="g4" type="Sprite2D" parent="Grass" unique_id=261610429]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(366, 638)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g61" type="Sprite2D" parent="Grass"]
+[node name="g61" type="Sprite2D" parent="Grass" unique_id=1414921476]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(424, 639)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g62" type="Sprite2D" parent="Grass"]
+[node name="g62" type="Sprite2D" parent="Grass" unique_id=896999913]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(400, 639)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g11" type="Sprite2D" parent="Grass"]
+[node name="g11" type="Sprite2D" parent="Grass" unique_id=1792434574]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(317, 638)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g10" type="Sprite2D" parent="Grass"]
+[node name="g10" type="Sprite2D" parent="Grass" unique_id=919268330]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(262, 637)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g24" type="Sprite2D" parent="Grass"]
+[node name="g24" type="Sprite2D" parent="Grass" unique_id=917175379]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(416, 382)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="v1" type="Sprite2D" parent="Grass"]
+[node name="v1" type="Sprite2D" parent="Grass" unique_id=1562512188]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(303, 505)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v2" type="Sprite2D" parent="Grass"]
+[node name="v2" type="Sprite2D" parent="Grass" unique_id=1217208253]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(212, 497)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v44" type="Sprite2D" parent="Grass"]
+[node name="v44" type="Sprite2D" parent="Grass" unique_id=697441237]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(216, 688)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v45" type="Sprite2D" parent="Grass"]
+[node name="v45" type="Sprite2D" parent="Grass" unique_id=1500771989]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(414, 689)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v7" type="Sprite2D" parent="Grass"]
+[node name="v7" type="Sprite2D" parent="Grass" unique_id=615851854]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(97, 497)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v43" type="Sprite2D" parent="Grass"]
+[node name="v43" type="Sprite2D" parent="Grass" unique_id=1293059465]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(91, 690)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v47" type="Sprite2D" parent="Grass"]
+[node name="v47" type="Sprite2D" parent="Grass" unique_id=1674011084]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(445, 686)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v48" type="Sprite2D" parent="Grass"]
+[node name="v48" type="Sprite2D" parent="Grass" unique_id=1489224011]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(754, 686)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v49" type="Sprite2D" parent="Grass"]
+[node name="v49" type="Sprite2D" parent="Grass" unique_id=251023604]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(785, 683)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v46" type="Sprite2D" parent="Grass"]
+[node name="v46" type="Sprite2D" parent="Grass" unique_id=1304097568]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(-163, 303)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v8" type="Sprite2D" parent="Grass"]
+[node name="v8" type="Sprite2D" parent="Grass" unique_id=1130640886]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(241, 500)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v28" type="Sprite2D" parent="Grass"]
+[node name="v28" type="Sprite2D" parent="Grass" unique_id=1764455694]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(443, 429)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v29" type="Sprite2D" parent="Grass"]
+[node name="v29" type="Sprite2D" parent="Grass" unique_id=1573877708]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(524, 428)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v30" type="Sprite2D" parent="Grass"]
+[node name="v30" type="Sprite2D" parent="Grass" unique_id=1793533538]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(561, 430)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v31" type="Sprite2D" parent="Grass"]
+[node name="v31" type="Sprite2D" parent="Grass" unique_id=1046106622]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(589, 430)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v32" type="Sprite2D" parent="Grass"]
+[node name="v32" type="Sprite2D" parent="Grass" unique_id=1439028300]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(649, 431)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v33" type="Sprite2D" parent="Grass"]
+[node name="v33" type="Sprite2D" parent="Grass" unique_id=1017666826]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(692, 432)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v34" type="Sprite2D" parent="Grass"]
+[node name="v34" type="Sprite2D" parent="Grass" unique_id=1659731162]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(562, 238)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v35" type="Sprite2D" parent="Grass"]
+[node name="v35" type="Sprite2D" parent="Grass" unique_id=1364243561]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(481, 238)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v36" type="Sprite2D" parent="Grass"]
+[node name="v36" type="Sprite2D" parent="Grass" unique_id=2038859934]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(423, 239)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v37" type="Sprite2D" parent="Grass"]
+[node name="v37" type="Sprite2D" parent="Grass" unique_id=406816514]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(506, 237)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v9" type="Sprite2D" parent="Grass"]
+[node name="v9" type="Sprite2D" parent="Grass" unique_id=594218386]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(145, 365)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v21" type="Sprite2D" parent="Grass"]
+[node name="v21" type="Sprite2D" parent="Grass" unique_id=2060904254]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(260, 113)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v22" type="Sprite2D" parent="Grass"]
+[node name="v22" type="Sprite2D" parent="Grass" unique_id=31442993]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(143, 112)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v23" type="Sprite2D" parent="Grass"]
+[node name="v23" type="Sprite2D" parent="Grass" unique_id=1850184974]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(405, 113)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v27" type="Sprite2D" parent="Grass"]
+[node name="v27" type="Sprite2D" parent="Grass" unique_id=1836245024]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(605, 146)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v25" type="Sprite2D" parent="Grass"]
+[node name="v25" type="Sprite2D" parent="Grass" unique_id=667580608]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(636, 160)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v26" type="Sprite2D" parent="Grass"]
+[node name="v26" type="Sprite2D" parent="Grass" unique_id=1754186946]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(636, 160)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v24" type="Sprite2D" parent="Grass"]
+[node name="v24" type="Sprite2D" parent="Grass" unique_id=2082340809]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(385, 113)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v10" type="Sprite2D" parent="Grass"]
+[node name="v10" type="Sprite2D" parent="Grass" unique_id=50659003]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(30, 176)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v11" type="Sprite2D" parent="Grass"]
+[node name="v11" type="Sprite2D" parent="Grass" unique_id=267897040]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(-30, 177)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v12" type="Sprite2D" parent="Grass"]
+[node name="v12" type="Sprite2D" parent="Grass" unique_id=1987185636]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(0, 178)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v13" type="Sprite2D" parent="Grass"]
+[node name="v13" type="Sprite2D" parent="Grass" unique_id=498098808]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(204, 114)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v14" type="Sprite2D" parent="Grass"]
+[node name="v14" type="Sprite2D" parent="Grass" unique_id=1047938769]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(358, 132)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v15" type="Sprite2D" parent="Grass"]
+[node name="v15" type="Sprite2D" parent="Grass" unique_id=89261511]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(440, 131)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v16" type="Sprite2D" parent="Grass"]
+[node name="v16" type="Sprite2D" parent="Grass" unique_id=1760584612]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(307, 115)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v17" type="Sprite2D" parent="Grass"]
+[node name="v17" type="Sprite2D" parent="Grass" unique_id=1524018954]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(535, 137)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v38" type="Sprite2D" parent="Grass"]
+[node name="v38" type="Sprite2D" parent="Grass" unique_id=219617011]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(456, 253)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v39" type="Sprite2D" parent="Grass"]
+[node name="v39" type="Sprite2D" parent="Grass" unique_id=1941371125]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(541, 245)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v18" type="Sprite2D" parent="Grass"]
+[node name="v18" type="Sprite2D" parent="Grass" unique_id=1765866500]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(693, 190)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v19" type="Sprite2D" parent="Grass"]
+[node name="v19" type="Sprite2D" parent="Grass" unique_id=1550077751]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(509, 517)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v20" type="Sprite2D" parent="Grass"]
+[node name="v20" type="Sprite2D" parent="Grass" unique_id=493976668]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(414, 534)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v40" type="Sprite2D" parent="Grass"]
+[node name="v40" type="Sprite2D" parent="Grass" unique_id=483545334]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(656, 532)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v41" type="Sprite2D" parent="Grass"]
+[node name="v41" type="Sprite2D" parent="Grass" unique_id=1061243080]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(686, 515)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v42" type="Sprite2D" parent="Grass"]
+[node name="v42" type="Sprite2D" parent="Grass" unique_id=882165139]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(489, 537)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v3" type="Sprite2D" parent="Grass"]
+[node name="v3" type="Sprite2D" parent="Grass" unique_id=1476604121]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(276, 503)
 scale = Vector2(1, -1)
 texture = ExtResource("22")
 
-[node name="v4" type="Sprite2D" parent="Grass"]
+[node name="v4" type="Sprite2D" parent="Grass" unique_id=116360220]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(194, 386)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v5" type="Sprite2D" parent="Grass"]
+[node name="v5" type="Sprite2D" parent="Grass" unique_id=1909768082]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(95, 371)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="v6" type="Sprite2D" parent="Grass"]
+[node name="v6" type="Sprite2D" parent="Grass" unique_id=1344419910]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(244, 374)
 scale = Vector2(1, -1)
 texture = ExtResource("21")
 
-[node name="g32" type="Sprite2D" parent="Grass"]
+[node name="g32" type="Sprite2D" parent="Grass" unique_id=2001478466]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(217, 319)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g35" type="Sprite2D" parent="Grass"]
+[node name="g35" type="Sprite2D" parent="Grass" unique_id=659706483]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(120, 319)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g31" type="Sprite2D" parent="Grass"]
+[node name="g31" type="Sprite2D" parent="Grass" unique_id=1516178859]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(623, 382)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g79" type="Sprite2D" parent="Grass"]
+[node name="g79" type="Sprite2D" parent="Grass" unique_id=703533336]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(1069, 380)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g76" type="Sprite2D" parent="Grass"]
+[node name="g76" type="Sprite2D" parent="Grass" unique_id=1968214960]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(591, 89)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g28" type="Sprite2D" parent="Grass"]
+[node name="g28" type="Sprite2D" parent="Grass" unique_id=378876918]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(507, 381)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g5" type="Sprite2D" parent="Grass"]
+[node name="g5" type="Sprite2D" parent="Grass" unique_id=11168334]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-9, 637)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g19" type="Sprite2D" parent="Grass"]
+[node name="g19" type="Sprite2D" parent="Grass" unique_id=550389489]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-76, 640)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="g15" type="Sprite2D" parent="Grass"]
+[node name="g15" type="Sprite2D" parent="Grass" unique_id=302286972]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-118, 638)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10")
 
-[node name="Flowers" type="Node" parent="."]
+[node name="Flowers" type="Node" parent="." unique_id=1986645106]
 
-[node name="Flower1" type="Sprite2D" parent="Flowers"]
+[node name="Flower1" type="Sprite2D" parent="Flowers" unique_id=603438628]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(314, 638)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11")
 
-[node name="Flower9" type="Sprite2D" parent="Flowers"]
+[node name="Flower9" type="Sprite2D" parent="Flowers" unique_id=28238022]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(459, 637)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11")
 
-[node name="Flower10" type="Sprite2D" parent="Flowers"]
+[node name="Flower10" type="Sprite2D" parent="Flowers" unique_id=961577795]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(618, 638)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11")
 
-[node name="Flower11" type="Sprite2D" parent="Flowers"]
+[node name="Flower11" type="Sprite2D" parent="Flowers" unique_id=2071563823]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(714, 639)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11")
 
-[node name="Flower12" type="Sprite2D" parent="Flowers"]
+[node name="Flower12" type="Sprite2D" parent="Flowers" unique_id=1666617399]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(244, 314)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11")
 
-[node name="Flower5" type="Sprite2D" parent="Flowers"]
+[node name="Flower5" type="Sprite2D" parent="Flowers" unique_id=1063986795]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(83, 637)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11")
 
-[node name="Flower13" type="Sprite2D" parent="Flowers"]
+[node name="Flower13" type="Sprite2D" parent="Flowers" unique_id=774061466]
 z_index = 1
 position = Vector2(160, 651)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("20")
 
-[node name="Flower14" type="Sprite2D" parent="Flowers"]
+[node name="Flower14" type="Sprite2D" parent="Flowers" unique_id=1652683162]
 z_index = 1
 position = Vector2(370, 652)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("20")
 
-[node name="Flower20" type="Sprite2D" parent="Flowers"]
+[node name="Flower20" type="Sprite2D" parent="Flowers" unique_id=368913856]
 z_index = 1
 position = Vector2(186, 457)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("20")
 
-[node name="Flower21" type="Sprite2D" parent="Flowers"]
+[node name="Flower21" type="Sprite2D" parent="Flowers" unique_id=444677785]
 z_index = 1
 position = Vector2(208, 456)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("20")
 
-[node name="Flower22" type="Sprite2D" parent="Flowers"]
+[node name="Flower22" type="Sprite2D" parent="Flowers" unique_id=98693813]
 z_index = 1
 position = Vector2(324.8, 75.8001)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("20")
 
-[node name="Flower23" type="Sprite2D" parent="Flowers"]
+[node name="Flower23" type="Sprite2D" parent="Flowers" unique_id=1296816874]
 z_index = 1
 position = Vector2(346.8, 74.8)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("20")
 
-[node name="Flower15" type="Sprite2D" parent="Flowers"]
+[node name="Flower15" type="Sprite2D" parent="Flowers" unique_id=307354757]
 z_index = 1
 position = Vector2(509, 652)
 scale = Vector2(-0.8, 0.8)
 texture = ExtResource("20")
 
-[node name="Flower16" type="Sprite2D" parent="Flowers"]
+[node name="Flower16" type="Sprite2D" parent="Flowers" unique_id=2102852811]
 z_index = 1
 position = Vector2(714, 649)
 scale = Vector2(-0.8, 0.8)
 texture = ExtResource("20")
 
-[node name="Flower18" type="Sprite2D" parent="Flowers"]
+[node name="Flower18" type="Sprite2D" parent="Flowers" unique_id=2135341302]
 z_index = 1
 position = Vector2(654, 395)
 scale = Vector2(-0.8, 0.8)
 texture = ExtResource("20")
 
-[node name="Flower17" type="Sprite2D" parent="Flowers"]
+[node name="Flower17" type="Sprite2D" parent="Flowers" unique_id=1328893142]
 z_index = 1
 position = Vector2(727, 653)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("20")
 
-[node name="Flower19" type="Sprite2D" parent="Flowers"]
+[node name="Flower19" type="Sprite2D" parent="Flowers" unique_id=1703762835]
 z_index = 1
 position = Vector2(556, 394)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("20")
 
-[node name="Flower6" type="Sprite2D" parent="Flowers"]
+[node name="Flower6" type="Sprite2D" parent="Flowers" unique_id=1539754224]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-67, 638)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11")
 
-[node name="Flower2" type="Sprite2D" parent="Flowers"]
+[node name="Flower2" type="Sprite2D" parent="Flowers" unique_id=939599606]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(191, 638)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11")
 
-[node name="Flower4" type="Sprite2D" parent="Flowers"]
+[node name="Flower4" type="Sprite2D" parent="Flowers" unique_id=797659101]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(126, 638)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11")
 
-[node name="Flower7" type="Sprite2D" parent="Flowers"]
+[node name="Flower7" type="Sprite2D" parent="Flowers" unique_id=589693879]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(448, 382)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11")
 
-[node name="Flower8" type="Sprite2D" parent="Flowers"]
+[node name="Flower8" type="Sprite2D" parent="Flowers" unique_id=525290309]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(-142, 254)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11")
 
-[node name="Flower3" type="Sprite2D" parent="Flowers"]
+[node name="Flower3" type="Sprite2D" parent="Flowers" unique_id=1577655602]
 z_index = -1
 material = ExtResource("18")
 position = Vector2(584, 382)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11")
 
-[node name="Coins" type="Node" parent="."]
+[node name="Platforms" type="Node" parent="." unique_id=1696509139]
 
-[node name="CoinsHorizontal1" type="Node2D" parent="Coins"]
-position = Vector2(700, 610)
-
-[node name="Coin" parent="Coins/CoinsHorizontal1" instance=ExtResource("4")]
-
-[node name="Coin2" parent="Coins/CoinsHorizontal1" instance=ExtResource("4")]
-position = Vector2(30, 0)
-
-[node name="Coin3" parent="Coins/CoinsHorizontal1" instance=ExtResource("4")]
-position = Vector2(60, 0)
-
-[node name="CoinsHorizontal3" type="Node2D" parent="Coins"]
-position = Vector2(154, 43)
-
-[node name="Coin" parent="Coins/CoinsHorizontal3" instance=ExtResource("4")]
-
-[node name="Coin2" parent="Coins/CoinsHorizontal3" instance=ExtResource("4")]
-position = Vector2(30, 0)
-
-[node name="Coin3" parent="Coins/CoinsHorizontal3" instance=ExtResource("4")]
-position = Vector2(60, 0)
-
-[node name="CoinsHorizontal2" type="Node2D" parent="Coins"]
-position = Vector2(200, 610)
-
-[node name="Coin" parent="Coins/CoinsHorizontal2" instance=ExtResource("4")]
-
-[node name="Coin2" parent="Coins/CoinsHorizontal2" instance=ExtResource("4")]
-position = Vector2(30, 0)
-
-[node name="Coin3" parent="Coins/CoinsHorizontal2" instance=ExtResource("4")]
-position = Vector2(60, 0)
-
-[node name="CoinsArc1" type="Node2D" parent="Coins"]
-position = Vector2(307, 594)
-
-[node name="Coin" parent="Coins/CoinsArc1" instance=ExtResource("4")]
-
-[node name="Coin2" parent="Coins/CoinsArc1" instance=ExtResource("4")]
-position = Vector2(30, -10)
-
-[node name="Coin3" parent="Coins/CoinsArc1" instance=ExtResource("4")]
-position = Vector2(60, 0)
-
-[node name="CoinsArc2" type="Node2D" parent="Coins"]
-position = Vector2(453, 332)
-
-[node name="Coin" parent="Coins/CoinsArc2" instance=ExtResource("4")]
-
-[node name="Coin2" parent="Coins/CoinsArc2" instance=ExtResource("4")]
-position = Vector2(30, -10)
-
-[node name="Coin3" parent="Coins/CoinsArc2" instance=ExtResource("4")]
-position = Vector2(60, 0)
-
-[node name="CoinsArc4" type="Node2D" parent="Coins"]
-position = Vector2(122, 406)
-
-[node name="Coin" parent="Coins/CoinsArc4" instance=ExtResource("4")]
-
-[node name="Coin2" parent="Coins/CoinsArc4" instance=ExtResource("4")]
-position = Vector2(30, -10)
-
-[node name="Coin3" parent="Coins/CoinsArc4" instance=ExtResource("4")]
-position = Vector2(60, 0)
-
-[node name="CoinsArc3" type="Node2D" parent="Coins"]
-position = Vector2(594, 332)
-
-[node name="Coin" parent="Coins/CoinsArc3" instance=ExtResource("4")]
-
-[node name="Coin2" parent="Coins/CoinsArc3" instance=ExtResource("4")]
-position = Vector2(30, -10)
-
-[node name="Coin3" parent="Coins/CoinsArc3" instance=ExtResource("4")]
-position = Vector2(60, 0)
-
-[node name="Platforms" type="Node" parent="."]
-
-[node name="Platform" parent="Platforms" instance=ExtResource("3")]
+[node name="Platform" parent="Platforms" unique_id=1400362417 instance=ExtResource("3")]
 z_index = 0
 position = Vector2(707, 400)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform" unique_id=1308115203]
 callback_mode_process = 0
-libraries = {
-"": SubResource("AnimationLibrary_knmjc")
-}
-autoplay = "move"
+libraries/ = SubResource("AnimationLibrary_knmjc")
+autoplay = &"move"
 
-[node name="Platform2" parent="Platforms" instance=ExtResource("3")]
+[node name="Platform2" parent="Platforms" unique_id=201677159 instance=ExtResource("3")]
 position = Vector2(-28, 645)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2" unique_id=701998798]
 callback_mode_process = 0
-libraries = {
-"": SubResource("AnimationLibrary_frb4n")
-}
-autoplay = "move"
+libraries/ = SubResource("AnimationLibrary_frb4n")
+autoplay = &"move"
 
-[node name="PlatformStatic" type="StaticBody2D" parent="Platforms"]
+[node name="PlatformStatic" type="StaticBody2D" parent="Platforms" unique_id=1796716836]
 z_index = -1
 position = Vector2(611, 135)
 rotation = 0.355618
 collision_layer = 16
 collision_mask = 0
 
-[node name="Sprite2" type="Sprite2D" parent="Platforms/PlatformStatic"]
+[node name="Sprite2" type="Sprite2D" parent="Platforms/PlatformStatic" unique_id=928073162]
 position = Vector2(-88.692, 10.5003)
 rotation = -0.246293
 texture = ExtResource("6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformStatic"]
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/PlatformStatic" unique_id=1847599743]
 texture = ExtResource("6")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/PlatformStatic"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/PlatformStatic" unique_id=664572441]
 position = Vector2(-3.20203, -8.41145)
 polygon = PackedVector2Array(-170.838, 7.9798, -90.8381, -15.201, 95.0401, -20.233, 83.4959, 3.25599, -51.1185, 8.44958, -176.787, 34.856)
 
-[node name="Enemies" type="Node" parent="."]
+[node name="ParallaxBackground" parent="." unique_id=2134934126 instance=ExtResource("7")]
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("2")]
-z_index = 2
-position = Vector2(544, 355)
+[node name="Trees" type="Node" parent="." unique_id=498662945]
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("2")]
-z_index = 2
-position = Vector2(492, 610)
-
-[node name="Enemy4" parent="Enemies" instance=ExtResource("2")]
-z_index = 2
-position = Vector2(395, 53)
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("7")]
-
-[node name="Trees" type="Node" parent="."]
-
-[node name="T1" type="Sprite2D" parent="Trees"]
+[node name="T1" type="Sprite2D" parent="Trees" unique_id=1558243735]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(587, 586)
 texture = ExtResource("14")
 
-[node name="T4" type="Sprite2D" parent="Trees"]
+[node name="T4" type="Sprite2D" parent="Trees" unique_id=326963130]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(282, 11)
 texture = ExtResource("14")
 
-[node name="T7" type="Sprite2D" parent="Trees"]
+[node name="T7" type="Sprite2D" parent="Trees" unique_id=994036553]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(3, 77)
 texture = ExtResource("14")
 
-[node name="T8" type="Sprite2D" parent="Trees"]
+[node name="T8" type="Sprite2D" parent="Trees" unique_id=426651386]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(-315, -51)
 texture = ExtResource("14")
 
-[node name="T10" type="Sprite2D" parent="Trees"]
+[node name="T10" type="Sprite2D" parent="Trees" unique_id=345489199]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(1140, -48)
 texture = ExtResource("14")
 
-[node name="T2" type="Sprite2D" parent="Trees"]
+[node name="T2" type="Sprite2D" parent="Trees" unique_id=1881215503]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(168, 266)
 texture = ExtResource("15")
 
-[node name="T6" type="Sprite2D" parent="Trees"]
+[node name="T6" type="Sprite2D" parent="Trees" unique_id=661929898]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(422, 9)
 texture = ExtResource("15")
 
-[node name="T3" type="Sprite2D" parent="Trees"]
+[node name="T3" type="Sprite2D" parent="Trees" unique_id=1733396023]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(1011, -50)
 texture = ExtResource("15")
 
-[node name="T9" type="Sprite2D" parent="Trees"]
+[node name="T9" type="Sprite2D" parent="Trees" unique_id=1151316575]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(-406, -49)
 texture = ExtResource("15")
 
-[node name="T5" type="Sprite2D" parent="Trees"]
+[node name="T5" type="Sprite2D" parent="Trees" unique_id=2042932964]
 z_index = 1
 material = ExtResource("18")
 position = Vector2(129, 588)
 texture = ExtResource("15")
 
-[node name="Bushes" type="Node" parent="."]
+[node name="Bushes" type="Node" parent="." unique_id=418724965]
 
-[node name="B1" type="Sprite2D" parent="Bushes"]
+[node name="B1" type="Sprite2D" parent="Bushes" unique_id=975614389]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(278, 620)
 texture = ExtResource("16")
 
-[node name="B13" type="Sprite2D" parent="Bushes"]
+[node name="B13" type="Sprite2D" parent="Bushes" unique_id=1674240907]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(483, 627)
 texture = ExtResource("16")
 
-[node name="B17" type="Sprite2D" parent="Bushes"]
+[node name="B17" type="Sprite2D" parent="Bushes" unique_id=1713992668]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(320, 49)
 texture = ExtResource("16")
 
-[node name="B7" type="Sprite2D" parent="Bushes"]
+[node name="B7" type="Sprite2D" parent="Bushes" unique_id=176257719]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(485, 369)
 texture = ExtResource("16")
 
-[node name="B24" type="Sprite2D" parent="Bushes"]
+[node name="B24" type="Sprite2D" parent="Bushes" unique_id=644122044]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(185, 433)
 texture = ExtResource("16")
 
-[node name="B22" type="Sprite2D" parent="Bushes"]
+[node name="B22" type="Sprite2D" parent="Bushes" unique_id=1825573243]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(473, 57)
 texture = ExtResource("16")
 
-[node name="B16" type="Sprite2D" parent="Bushes"]
+[node name="B16" type="Sprite2D" parent="Bushes" unique_id=597621261]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(-75, 628)
 texture = ExtResource("16")
 
-[node name="B11" type="Sprite2D" parent="Bushes"]
+[node name="B11" type="Sprite2D" parent="Bushes" unique_id=822889269]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(-230, -10)
 texture = ExtResource("16")
 
-[node name="B14" type="Sprite2D" parent="Bushes"]
+[node name="B14" type="Sprite2D" parent="Bushes" unique_id=2096610187]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(162, 66)
 texture = ExtResource("16")
 
-[node name="B12" type="Sprite2D" parent="Bushes"]
+[node name="B12" type="Sprite2D" parent="Bushes" unique_id=236168084]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(927, -3)
 rotation = -0.462162
 texture = ExtResource("16")
 
-[node name="B9" type="Sprite2D" parent="Bushes"]
+[node name="B9" type="Sprite2D" parent="Bushes" unique_id=231822632]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(637, 379)
@@ -1477,7 +1378,7 @@ rotation = 0.181514
 texture = ExtResource("16")
 offset = Vector2(35.3364, -1.40192)
 
-[node name="B20" type="Sprite2D" parent="Bushes"]
+[node name="B20" type="Sprite2D" parent="Bushes" unique_id=231437883]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(643, 110)
@@ -1485,7 +1386,7 @@ rotation = 0.181514
 texture = ExtResource("16")
 offset = Vector2(35.3364, -1.40192)
 
-[node name="B10" type="Sprite2D" parent="Bushes"]
+[node name="B10" type="Sprite2D" parent="Bushes" unique_id=9823257]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(-233, -2)
@@ -1494,13 +1395,13 @@ scale = Vector2(1, -1)
 texture = ExtResource("16")
 offset = Vector2(35.3364, -1.40192)
 
-[node name="B31" type="Sprite2D" parent="Bushes"]
+[node name="B31" type="Sprite2D" parent="Bushes" unique_id=446220083]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(-498.685, -14.4639)
 texture = ExtResource("16")
 
-[node name="B32" type="Sprite2D" parent="Bushes"]
+[node name="B32" type="Sprite2D" parent="Bushes" unique_id=1803162439]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(-501.685, -6.46387)
@@ -1509,13 +1410,13 @@ scale = Vector2(1, -1)
 texture = ExtResource("16")
 offset = Vector2(35.3364, -1.40192)
 
-[node name="B33" type="Sprite2D" parent="Bushes"]
+[node name="B33" type="Sprite2D" parent="Bushes" unique_id=752711708]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(1141.31, -16.4639)
 texture = ExtResource("16")
 
-[node name="B34" type="Sprite2D" parent="Bushes"]
+[node name="B34" type="Sprite2D" parent="Bushes" unique_id=1340144691]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(1138.31, -8.46387)
@@ -1524,7 +1425,7 @@ scale = Vector2(1, -1)
 texture = ExtResource("16")
 offset = Vector2(35.3364, -1.40192)
 
-[node name="B21" type="Sprite2D" parent="Bushes"]
+[node name="B21" type="Sprite2D" parent="Bushes" unique_id=439797839]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(669, 113)
@@ -1533,7 +1434,7 @@ scale = Vector2(1, -1)
 texture = ExtResource("16")
 offset = Vector2(35.3364, -1.40192)
 
-[node name="B27" type="Sprite2D" parent="Bushes"]
+[node name="B27" type="Sprite2D" parent="Bushes" unique_id=1388772617]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(572, 191)
@@ -1542,7 +1443,7 @@ scale = Vector2(1, -1)
 texture = ExtResource("16")
 offset = Vector2(35.3364, -1.40192)
 
-[node name="B28" type="Sprite2D" parent="Bushes"]
+[node name="B28" type="Sprite2D" parent="Bushes" unique_id=614210320]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(63, 140)
@@ -1551,7 +1452,7 @@ scale = Vector2(1, -1)
 texture = ExtResource("16")
 offset = Vector2(35.3364, -1.40192)
 
-[node name="B15" type="Sprite2D" parent="Bushes"]
+[node name="B15" type="Sprite2D" parent="Bushes" unique_id=1756271684]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(-74, 645)
@@ -1560,25 +1461,25 @@ scale = Vector2(1, -1)
 texture = ExtResource("16")
 offset = Vector2(35.3364, -1.40192)
 
-[node name="B5" type="Sprite2D" parent="Bushes"]
+[node name="B5" type="Sprite2D" parent="Bushes" unique_id=1874450412]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(142, 643)
 texture = ExtResource("16")
 
-[node name="B4" type="Sprite2D" parent="Bushes"]
+[node name="B4" type="Sprite2D" parent="Bushes" unique_id=2140108446]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(324, 639)
 texture = ExtResource("16")
 
-[node name="B26" type="Sprite2D" parent="Bushes"]
+[node name="B26" type="Sprite2D" parent="Bushes" unique_id=1859834200]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(105, 451)
 texture = ExtResource("16")
 
-[node name="B2" type="Sprite2D" parent="Bushes"]
+[node name="B2" type="Sprite2D" parent="Bushes" unique_id=1792296187]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(526, 637)
@@ -1586,7 +1487,7 @@ rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("16")
 
-[node name="B8" type="Sprite2D" parent="Bushes"]
+[node name="B8" type="Sprite2D" parent="Bushes" unique_id=839557000]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(522, 387)
@@ -1594,7 +1495,7 @@ rotation = 2.70506
 scale = Vector2(1, -1)
 texture = ExtResource("16")
 
-[node name="B6" type="Sprite2D" parent="Bushes"]
+[node name="B6" type="Sprite2D" parent="Bushes" unique_id=377451768]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(803, 622)
@@ -1602,7 +1503,7 @@ rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("16")
 
-[node name="B29" type="Sprite2D" parent="Bushes"]
+[node name="B29" type="Sprite2D" parent="Bushes" unique_id=2043733781]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(707, 621)
@@ -1610,7 +1511,7 @@ rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("16")
 
-[node name="B30" type="Sprite2D" parent="Bushes"]
+[node name="B30" type="Sprite2D" parent="Bushes" unique_id=2064677292]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(739, 638)
@@ -1618,7 +1519,7 @@ rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("16")
 
-[node name="B23" type="Sprite2D" parent="Bushes"]
+[node name="B23" type="Sprite2D" parent="Bushes" unique_id=595203625]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(669, 629)
@@ -1626,7 +1527,7 @@ rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("16")
 
-[node name="B18" type="Sprite2D" parent="Bushes"]
+[node name="B18" type="Sprite2D" parent="Bushes" unique_id=1757413215]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(373, 60)
@@ -1634,7 +1535,7 @@ rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("16")
 
-[node name="B3" type="Sprite2D" parent="Bushes"]
+[node name="B3" type="Sprite2D" parent="Bushes" unique_id=1741713569]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(224, 634)
@@ -1642,7 +1543,7 @@ rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("16")
 
-[node name="B25" type="Sprite2D" parent="Bushes"]
+[node name="B25" type="Sprite2D" parent="Bushes" unique_id=1118559730]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(142, 439)
@@ -1650,7 +1551,7 @@ rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("16")
 
-[node name="B19" type="Sprite2D" parent="Bushes"]
+[node name="B19" type="Sprite2D" parent="Bushes" unique_id=939480693]
 z_index = -2
 material = ExtResource("18")
 position = Vector2(261, 57)
@@ -1658,69 +1559,69 @@ rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("16")
 
-[node name="Rocks" type="Node" parent="."]
+[node name="Rocks" type="Node" parent="." unique_id=1977072072]
 
-[node name="R1" type="Sprite2D" parent="Rocks"]
+[node name="R1" type="Sprite2D" parent="Rocks" unique_id=457914785]
 z_index = -2
 position = Vector2(376, 624)
 texture = ExtResource("17")
 
-[node name="R9" type="Sprite2D" parent="Rocks"]
+[node name="R9" type="Sprite2D" parent="Rocks" unique_id=1027914035]
 z_index = -2
 position = Vector2(240, 426)
 texture = ExtResource("17")
 
-[node name="R10" type="Sprite2D" parent="Rocks"]
+[node name="R10" type="Sprite2D" parent="Rocks" unique_id=1436370383]
 z_index = -2
 position = Vector2(428, 182)
 texture = ExtResource("17")
 
-[node name="R11" type="Sprite2D" parent="Rocks"]
+[node name="R11" type="Sprite2D" parent="Rocks" unique_id=686900275]
 z_index = -2
 position = Vector2(445, 197)
 texture = ExtResource("17")
 
-[node name="R8" type="Sprite2D" parent="Rocks"]
+[node name="R8" type="Sprite2D" parent="Rocks" unique_id=30733560]
 z_index = -2
 position = Vector2(762, 634)
 texture = ExtResource("17")
 
-[node name="R7" type="Sprite2D" parent="Rocks"]
+[node name="R7" type="Sprite2D" parent="Rocks" unique_id=1053469689]
 z_index = -2
 position = Vector2(194, 316)
 texture = ExtResource("17")
 
-[node name="R3" type="Sprite2D" parent="Rocks"]
+[node name="R3" type="Sprite2D" parent="Rocks" unique_id=1703690481]
 z_index = -2
 position = Vector2(573, 378)
 texture = ExtResource("17")
 
-[node name="R5" type="Sprite2D" parent="Rocks"]
+[node name="R5" type="Sprite2D" parent="Rocks" unique_id=381627379]
 z_index = -2
 position = Vector2(-187, 232)
 texture = ExtResource("17")
 
-[node name="R12" type="Sprite2D" parent="Rocks"]
+[node name="R12" type="Sprite2D" parent="Rocks" unique_id=460418251]
 z_index = -2
 position = Vector2(-164, 256)
 texture = ExtResource("17")
 
-[node name="R6" type="Sprite2D" parent="Rocks"]
+[node name="R6" type="Sprite2D" parent="Rocks" unique_id=1055358879]
 z_index = -2
 position = Vector2(558, 62)
 texture = ExtResource("17")
 
-[node name="R4" type="Sprite2D" parent="Rocks"]
+[node name="R4" type="Sprite2D" parent="Rocks" unique_id=103609100]
 z_index = -2
 position = Vector2(1048, -17)
 texture = ExtResource("17")
 
-[node name="R13" type="Sprite2D" parent="Rocks"]
+[node name="R13" type="Sprite2D" parent="Rocks" unique_id=1720191644]
 z_index = -2
 position = Vector2(-356, -17)
 texture = ExtResource("17")
 
-[node name="R2" type="Sprite2D" parent="Rocks"]
+[node name="R2" type="Sprite2D" parent="Rocks" unique_id=1403955022]
 z_index = -2
 position = Vector2(72, 639)
 scale = Vector2(0.5, 0.5)
