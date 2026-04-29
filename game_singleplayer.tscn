@@ -4,7 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://ctgumjaytuoch" path="res://level/level.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://player/player.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://c7ai4bigaryci" path="res://gui/pause_menu_singleplayer.tscn" id="4_x6l06"]
+[ext_resource type="Texture2D" uid="uid://bjjywmvba0sve" path="res://enemy/enemy.webp" id="5_hspmi"]
+[ext_resource type="PackedScene" uid="uid://6mtip3ruyn" path="res://enemy/enemy.tscn" id="6_u2xgy"]
+[ext_resource type="Script" uid="uid://dh477skbiacvq" path="res://area_2d.gd" id="7_lf6ks"]
+[ext_resource type="PackedScene" uid="uid://drwp60x7q7wtx" path="res://addons/BurstParticles2D/BurstParticles2D-demo/MultiParticleExample1.tscn" id="8_pj3lu"]
+[ext_resource type="PackedScene" uid="uid://duqam6ffexoc8" path="res://addons/BurstParticles2D/BurstParticles2D-demo/MultiParticleExample2.tscn" id="9_ma7jk"]
+[ext_resource type="PackedScene" uid="uid://cky6e5nl0nyod" path="res://level/platforms/platform.tscn" id="10_u2xgy"]
 
+HEAD
 [node name="Game" type="Node" unique_id=640128653]
 process_mode = 3
 script = ExtResource("2")
@@ -20,4 +27,172 @@ layer = 100
 [node name="PauseMenu" parent="InterfaceLayer" unique_id=1032584720 instance=ExtResource("4_x6l06")]
 offset_bottom = -140.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h3x8"]
+size = Vector2(885.1726, 461.76495)
+
+[node name="Game" type="Node" unique_id=988692158]
+process_mode = 3
+script = ExtResource("2")
+
+[node name="Level" parent="." unique_id=890040886 instance=ExtResource("3")]
+
+[node name="Player" parent="Level" unique_id=1786808189 instance=ExtResource("4")]
+position = Vector2(90, 546)
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="." unique_id=1888991348]
+layer = 100
+
+[node name="PauseMenu" parent="InterfaceLayer" unique_id=894637981 instance=ExtResource("4_x6l06")]
+
+[node name="Level2" parent="." unique_id=602287290 instance=ExtResource("3")]
+position = Vector2(2453, -3)
+
+[node name="Enemy" type="Sprite2D" parent="." unique_id=1394998671]
+position = Vector2(3053, 542)
+texture = ExtResource("5_hspmi")
+
+[node name="Enemy2" type="Sprite2D" parent="." unique_id=1589907836]
+position = Vector2(3178, 479)
+texture = ExtResource("5_hspmi")
+
+[node name="Enemy3" type="Sprite2D" parent="." unique_id=1638951747]
+position = Vector2(3492, 303)
+texture = ExtResource("5_hspmi")
+
+[node name="Enemy4" type="Sprite2D" parent="." unique_id=1007655744]
+position = Vector2(3544, 238)
+texture = ExtResource("5_hspmi")
+
+[node name="Enemy5" parent="." unique_id=2049474009 instance=ExtResource("6_u2xgy")]
+position = Vector2(2931, 342)
+
+[node name="Enemy6" parent="." unique_id=1296764563 instance=ExtResource("6_u2xgy")]
+position = Vector2(2908, 578)
+
+[node name="Enemy7" parent="." unique_id=131486230 instance=ExtResource("6_u2xgy")]
+position = Vector2(2804, 583)
+
+[node name="Enemy8" parent="." unique_id=613469703 instance=ExtResource("6_u2xgy")]
+position = Vector2(3131, 542)
+
+[node name="Enemy9" parent="." unique_id=397183671 instance=ExtResource("6_u2xgy")]
+position = Vector2(3170, 453)
+
+[node name="Enemy10" parent="." unique_id=822357968 instance=ExtResource("6_u2xgy")]
+position = Vector2(3066, 334)
+
+[node name="Area2D" type="Area2D" parent="Enemy10" unique_id=521077900]
+position = Vector2(-368.3452, -453.76495)
+script = ExtResource("7_lf6ks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy10/Area2D" unique_id=850146070]
+position = Vector2(286.7588, 566.76495)
+shape = SubResource("RectangleShape2D_5h3x8")
+
+[node name="MultiParticleExample1" parent="Enemy10/Area2D" unique_id=2096874768 instance=ExtResource("8_pj3lu")]
+position = Vector2(102.345215, 513.765)
+repeat = false
+autostart = false
+
+[node name="MultiParticleExample2" parent="Enemy10/Area2D" unique_id=167447337 instance=ExtResource("8_pj3lu")]
+position = Vector2(350.3452, 637.76495)
+repeat = false
+autostart = false
+
+[node name="MultiParticleExample3" parent="Enemy10/Area2D" unique_id=1664766385 instance=ExtResource("8_pj3lu")]
+position = Vector2(189.34521, 489.76495)
+repeat = false
+autostart = false
+
+[node name="MultiParticleExample4" parent="Enemy10/Area2D" unique_id=236290647 instance=ExtResource("8_pj3lu")]
+position = Vector2(350.3452, 557.76495)
+repeat = false
+autostart = false
+
+[node name="MultiParticleExample5" parent="Enemy10/Area2D" unique_id=1271591336 instance=ExtResource("8_pj3lu")]
+position = Vector2(508.3452, 528.76495)
+repeat = false
+autostart = false
+
+[node name="MultiParticleExample6" parent="Enemy10/Area2D" unique_id=1623136173 instance=ExtResource("9_ma7jk")]
+position = Vector2(443.3452, 557.76495)
+repeat = false
+autostart = false
+
+[node name="MultiParticleExample7" parent="Enemy10/Area2D" unique_id=1901324973 instance=ExtResource("8_pj3lu")]
+position = Vector2(285.3452, 378.76495)
+repeat = false
+autostart = false
+
+[node name="MultiParticleExample9" parent="Enemy10/Area2D" unique_id=56016752 instance=ExtResource("8_pj3lu")]
+position = Vector2(267.3452, 715.76495)
+repeat = false
+autostart = false
+
+[node name="MultiParticleExample11" parent="Enemy10/Area2D" unique_id=1029605205 instance=ExtResource("8_pj3lu")]
+position = Vector2(298.3452, 386.76495)
+repeat = false
+autostart = false
+
+[node name="MultiParticleExample12" parent="Enemy10/Area2D" unique_id=982419654 instance=ExtResource("8_pj3lu")]
+position = Vector2(101.345215, 547.76495)
+repeat = false
+autostart = false
+
+[node name="MultiParticleExample13" parent="Enemy10/Area2D" unique_id=1917705269 instance=ExtResource("8_pj3lu")]
+position = Vector2(492.3452, 606.76495)
+repeat = false
+autostart = false
+
+[node name="MultiParticleExample14" parent="Enemy10/Area2D" unique_id=23075825 instance=ExtResource("8_pj3lu")]
+position = Vector2(313.3452, 702.76495)
+repeat = false
+autostart = false
+
+[node name="MultiParticleExample15" parent="Enemy10/Area2D" unique_id=704991990 instance=ExtResource("8_pj3lu")]
+position = Vector2(412.3452, 331.76495)
+repeat = false
+autostart = false
+
+[node name="Platform" parent="." unique_id=491967992 instance=ExtResource("10_u2xgy")]
+position = Vector2(-476, -137)
+
+[node name="Platform2" parent="." unique_id=1555704249 instance=ExtResource("10_u2xgy")]
+position = Vector2(-358, -272)
+
+[node name="Platform3" parent="." unique_id=1461121589 instance=ExtResource("10_u2xgy")]
+position = Vector2(-213, -348)
+
+[node name="Platform4" parent="." unique_id=117647756 instance=ExtResource("10_u2xgy")]
+position = Vector2(166, -213)
+
+[node name="Platform5" parent="." unique_id=665324384 instance=ExtResource("10_u2xgy")]
+position = Vector2(408, -289)
+
+[node name="Platform6" parent="." unique_id=1279159514 instance=ExtResource("10_u2xgy")]
+position = Vector2(615, -255)
+
+[node name="Platform7" parent="." unique_id=1826030155 instance=ExtResource("10_u2xgy")]
+position = Vector2(909, -206)
+
+[node name="Platform8" parent="." unique_id=1940701605 instance=ExtResource("10_u2xgy")]
+position = Vector2(971, -241)
+
+[node name="Platform9" parent="." unique_id=1897280963 instance=ExtResource("10_u2xgy")]
+position = Vector2(1133, -313)
+
+[node name="Platform10" parent="." unique_id=1846468747 instance=ExtResource("10_u2xgy")]
+position = Vector2(1264, -410)
+
+[node name="Platform11" parent="." unique_id=230118553 instance=ExtResource("10_u2xgy")]
+position = Vector2(1372, -538)
+
+[node name="Platform12" parent="." unique_id=1555962220 instance=ExtResource("10_u2xgy")]
+position = Vector2(1527, -663)
+
+[node name="Platform13" parent="." unique_id=1310317727 instance=ExtResource("10_u2xgy")]
+position = Vector2(1634, -663)
+origin/feature/getnoitad
+
 [connection signal="coin_collected" from="Level/Player" to="InterfaceLayer/PauseMenu" method="_on_coin_collected"]
+[connection signal="body_entered" from="Enemy10/Area2D" to="Enemy10/Area2D" method="_on_body_entered"]
