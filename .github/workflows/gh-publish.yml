@@ -16,11 +16,11 @@ jobs:
 
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Godot Export
         id: export
-        uses: firebelley/godot-export@v7.0.0
+        uses: firebelley/godot-export@v2
         with:
           godot_executable_download_url: "https://github.com/godotengine/godot/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_linux.x86_64.zip"
           godot_export_templates_download_url: "https://github.com/godotengine/godot/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz"
@@ -32,6 +32,7 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           generateReleaseNotes: true
+          archive_output: true
           tag: ${{ github.ref_name }}
           artifacts: ${{ steps.export.outputs.archive.directory }}/*
 
